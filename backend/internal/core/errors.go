@@ -8,11 +8,12 @@ import (
 
 var (
 	// post errors
-	ErrInvalidPostID        = errors.New("invalid post ID")
-	ErrPostNotFound         = errors.New("post not found")
-	ErrRecordNotFound       = gorm.ErrRecordNotFound
-	ErrPostIsDeleted        = errors.New("post is deleted")
-	ErrPostAuthorIDMismatch = errors.New("your user_id and db author_id mismatch")
+	ErrInvalidPostID               = errors.New("invalid post ID")
+	ErrPostNotFound                = errors.New("post not found")
+	ErrRecordNotFound              = gorm.ErrRecordNotFound
+	ErrPostIsDeleted               = errors.New("post is deleted")
+	ErrPostAuthorIDMismatch        = errors.New("your user_id and db author_id mismatch")
+	ErrNoPostsWaitingForModeration = errors.New("no posts waiting for moderation")
 
 	// user errors
 	ErrFailedToGetAuthorIDFromToken = errors.New("failed to get author ID from token")
@@ -38,4 +39,7 @@ var (
 	ErrReplyCommentNotFound        = errors.New("reply comment not found")
 	ErrInvalidCommentReplyID       = errors.New("invalid comment reply_id")
 	ErrNullCommentParentID         = errors.New("comment parent id is null")
+
+	// moderator errors
+	ErrNoSuchModerator = errors.New("moderator does not exist")
 )
